@@ -1,8 +1,14 @@
 package Michal;
 
 
+import java.util.LinkedList;
+
 public class SingleLinkedList {
     Node head;
+
+    SingleLinkedList(int value){
+        this.head = new Node(value);
+    }
 
     public void append (int data){
         if (head == null){
@@ -10,10 +16,10 @@ public class SingleLinkedList {
             return;
         }
         Node current = head;
-        while (current.link != null){
-            current = current.link;
+        while (current.next != null){
+            current = current.next;
         }
-        current.link = new Node(data);
+        current.next = new Node(data);
         return;
     }
 
@@ -24,7 +30,7 @@ public class SingleLinkedList {
         }
 
         Node newHead = new Node(data);
-        newHead.link = head;
+        newHead.next = head;
         head = newHead;
         return;
     }
@@ -33,15 +39,41 @@ public class SingleLinkedList {
         if (head == null)
             return;
         if (head.data == data){
-            head = head.link;
+            head = head.next;
             return;
         }
         Node current = head;
-        while (current.link != null){
-            if (current.link.data == data)
-                current.link = current.link.link;
+        while (current.next != null){
+            if (current.next.data == data)
+                current.next = current.next.next;
             return;
         }
+    }
+
+    public void printList(){
+        Node current = head;
+        while (current != null) {
+            System.out.println(current.data);
+            if (current.next == null) return;
+            current = current.next;
+        }
+        return;
+
+    }
+
+    public int listSize (){
+        int count = 0;
+        Node current = head;
+        if (head != null){
+          while (current != null){
+              count++;
+              if(current.next==null) return count;
+              current = current.next;
+          }
+
+        }
+            return count;
+
     }
 
 

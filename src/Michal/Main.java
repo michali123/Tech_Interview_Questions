@@ -12,8 +12,6 @@ public class Main {
 
         int exNumber = 0;
         Scanner in = new Scanner(System.in);
-        int a = 9, b = 5;
-        System.out.println(a/b);
         System.out.println("\nEnter the ex. number for activation: ");
         exNumber = in.nextInt();
 
@@ -25,19 +23,16 @@ public class Main {
             case 2: StringManipulation stringManipulation = new StringManipulation();
                     stringManipulation.permutation("ABC");
                 break;
+            case 3: // LinkedList appending and printing, classes used: Node, SingleLinkedList
+                SingleLinkedList myList = new SingleLinkedList(1);
+                myList.append(2);
+                myList.append(6);
+                myList.append(9);
+                myList.printList();
+                int size = myList.listSize();
+                System.out.println("Size of list:" + size);
         }
 
-        recursionInLoop(532 );
     }
 
-    public  static void recursionInLoop (int num){
-        if (num % 10 == 0 ){
-            return;
-        }
-
-        for (int i = 0; i <= 2; i++){
-            System.out.println( num % 10);
-            recursionInLoop ( num/10 );
-        }
-    }
 }
