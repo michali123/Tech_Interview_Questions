@@ -76,6 +76,19 @@ public class SingleLinkedList {
 
     }
 
+    public Node reverseList(Node head) {
+        Node current = head;
+        Node prev = null;
+        Node buffer;
+        while (current != null){
+            buffer = current.next;
+            current.next = prev;
+            prev = current;
+            current = buffer;
+        }
+        return prev;
+    }
+
 
 
 }
