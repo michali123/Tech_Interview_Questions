@@ -1,13 +1,18 @@
 package Michal;
 
 
+import java.util.HashSet;
 import java.util.LinkedList;
+import java.util.Set;
 
 public class SingleLinkedList {
     Node head;
 
     SingleLinkedList(int value){
         this.head = new Node(value);
+    }
+    public SingleLinkedList (){
+        this.head = null;
     }
 
     public void append (int data){
@@ -89,6 +94,23 @@ public class SingleLinkedList {
         return prev;
     }
 
+    public boolean checkCycle (Node head){
+        Set<Node> nodeSet = new HashSet<>();
+        while (head != null){
+            if (nodeSet.contains(head)){
+                return true; }
+                else {
+                    nodeSet.add(head);
+                }
 
+                head = head.next;
 
+            }
+        return false;
+
+    }
 }
+
+
+
+
