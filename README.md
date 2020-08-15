@@ -7,6 +7,6 @@ A collection of some coding interview practice questions, utilzing aglorithms an
 
   In this repository: 
 - [x] Arrays and Strings manpulations   
-- [x] Linked Lists - including basic functions and manipulations.
+- [x] Linked Lists - Including data structure implementation, Singly LinkedList manipulations and algorithms for problem solving.
 - [ ] Stacks & Queues 
 - [ ] to be continued 
