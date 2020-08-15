@@ -31,6 +31,14 @@ public class Main {
                 myList.printList();
                 int size = myList.listSize();
                 System.out.println("Size of list:" + size);
+                String testing ="";
+                Node current = myList.head;
+                while (current != null){
+                    testing += current.data;
+                    current = current.next;
+
+                }
+                System.out.println("print the string" + testing);
             case 4: //Checking if linkedList is cyclic or not using HashMap (we hash the nodes' references (addresses) and
                     //checking if a node's address exists in the list or not.
                 SingleLinkedList cyclicList = new SingleLinkedList();
