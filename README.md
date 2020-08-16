@@ -9,11 +9,11 @@ A collection of some coding interview practice questions, utilzing aglorithms an
 - [x] Arrays and Strings manpulations   
 - [x] Linked Lists - Including data structure implementation, Singly LinkedList manipulations and algorithms for problem solving.
 - [ ] Stacks & Queues 
-- [ ] Heaps and Binary Search Algoorithms
+- [ ] Heaps and Binary Search Algorithms
 - [ ] Hash Tables
 - [ ] Trees - In-order, pre-order, post-order
 - [ ] Graphs
 - [ ] Strings and Arrays
-- [ ] Greedy Algotrithms
+- [ ] Greedy Algorithms
 - [ ] Backtracking pb
-- [ ] Desing questiosn 
+- [ ] Design questions 
