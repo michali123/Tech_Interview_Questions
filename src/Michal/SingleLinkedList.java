@@ -58,13 +58,14 @@ public class SingleLinkedList {
     public void printList(){
         Node current = head;
         while (current != null) {
-            System.out.println(current.data);
+            System.out.print(current.data);
             if (current.next == null) return;
             current = current.next;
         }
         return;
 
     }
+
 
     public int listSize (){
         int count = 0;
@@ -126,6 +127,27 @@ You should try to do it in place. The program should run in O(1) space complexit
 
         odd.next = evenHead;
         return head;
+    }
+
+    /* Given a non-negative integer represented as a non-empty singly linked list of digits, add one to the integer.
+You may assume the integer do not contain any leading zero, except the number 0 itself.
+The digits are stored such that the most significant digit is at the head of the list.
+test cases: 9->1, 9->9->1, 9->null*/
+
+    public Node addOne (Node head){
+        // firstly we reverse the list
+        head =  reverseList(head);
+        Node curr = head;
+        curr.data ++;
+
+        while (curr.data == 10){
+            curr.data = 0;
+            if (curr.next != null) curr.next.data++;
+            else {
+                curr.next = new Node(1);
+            }
+        }
+        return reverseList(head);
     }
 }
 

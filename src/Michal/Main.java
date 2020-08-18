@@ -47,7 +47,17 @@ public class Main {
                 cyclicList.append(5);
                 cyclicList.append(8);
                 System.out.println(cyclicList.checkCycle(cyclicList.head));
+            case 5: //Adding one to a linked list
+                SingleLinkedList l1 = new SingleLinkedList(1);
+                l1.append(9);
+                System.out.print("Adding 1 to the number: ");
+                l1.printList();
+                System.out.println();
+                System.out.println("Calculating...\n ..." );
+                l1.addOne(l1.head);
+                l1.printList();
         }
+
 
     }
 
