@@ -1,8 +1,7 @@
-package Michal;
+package LinkedLists;
 
 
 import java.util.HashSet;
-import java.util.LinkedList;
 import java.util.Set;
 
 public class SingleLinkedList {
@@ -26,6 +25,17 @@ public class SingleLinkedList {
         }
         current.next = new Node(data);
         return;
+    }
+
+    public void appendFromleft(int data){
+        if (head == null) {
+            this.head = new Node(data);
+            this.head = head.next;
+        }
+        Node buffer = head;
+        head = new Node (data);
+        head.next = buffer;
+
     }
 
     public void prepend (int data){
@@ -58,7 +68,7 @@ public class SingleLinkedList {
     public void printList(){
         Node current = head;
         while (current != null) {
-            System.out.print(current.data);
+            System.out.print(current.data +" -> ");
             if (current.next == null) return;
             current = current.next;
         }

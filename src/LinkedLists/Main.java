@@ -1,6 +1,5 @@
-package Michal;
+package LinkedLists;
 
-import java.security.PublicKey;
 import java.util.Scanner;
 
 public class Main {
@@ -56,7 +55,13 @@ public class Main {
                 System.out.println("Calculating...\n ..." );
                 l1.addOne(l1.head);
                 l1.printList();
+            case 6: //Adding nodes at the beginning of the list
+                SingleLinkedList l2 = new SingleLinkedList(1);
+                l2.appendFromleft(3);
+                l2.appendFromleft(5);
+                l2.printList();
         }
+
 
 
     }

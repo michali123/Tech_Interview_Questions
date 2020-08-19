@@ -1,4 +1,4 @@
-package Michal;
+package LinkedLists;
 
 public class Node {
         int data;

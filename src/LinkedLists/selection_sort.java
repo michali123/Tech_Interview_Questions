@@ -1,4 +1,4 @@
-package Michal;
+package LinkedLists;
 
 import java.util.ArrayList;
 import java.util.Collections;
