@@ -14,6 +14,9 @@ public class Main {
         System.out.println("\nEnter the ex. number for activation: ");
         exNumber = in.nextInt();
 
+        // creating general list to use for our test cases
+        SingleLinkedList generalList = new SingleLinkedList();
+        generalList.append(5); generalList.append(4); generalList.append(76); generalList.append(89);
         switch (exNumber){
             case 1 :
                 Recursion recursion = new Recursion();
@@ -35,6 +38,7 @@ public class Main {
                 while (current != null){
                     testing += current.data;
                     current = current.next;
+                    break;
 
                 }
                 System.out.println("print the string" + testing);
@@ -46,6 +50,7 @@ public class Main {
                 cyclicList.append(5);
                 cyclicList.append(8);
                 System.out.println(cyclicList.checkCycle(cyclicList.head));
+                break;
             case 5: //Adding one to a linked list
                 SingleLinkedList l1 = new SingleLinkedList(1);
                 l1.append(9);
@@ -55,11 +60,20 @@ public class Main {
                 System.out.println("Calculating...\n ..." );
                 l1.addOne(l1.head);
                 l1.printList();
+                break;
             case 6: //Adding nodes at the beginning of the list
                 SingleLinkedList l2 = new SingleLinkedList(1);
                 l2.appendFromleft(3);
                 l2.appendFromleft(5);
                 l2.printList();
+            case 7: // Reversing list recursively. (For testing we'll use l2 list created in case 6.)
+                System.out.print("Current list to reverse: ");
+                generalList.printList();
+                SingleLinkedList node = new SingleLinkedList();
+                node.head = generalList.reverseRecursively(generalList.head);
+                System.out.print("\nList after recursive reverse: ");
+                node.printList();
+
         }
 
 

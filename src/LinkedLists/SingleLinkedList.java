@@ -159,6 +159,16 @@ test cases: 9->1, 9->9->1, 9->null*/
         }
         return reverseList(head);
     }
+    // reverse a singly linked list using recursion ex: 1->2->3->4->null
+    public Node reverseRecursively(Node node){
+
+        if (node == null || node.next == null) return node;
+
+        Node head = reverseList(node.next);
+        node.next.next = node;
+        node.next = null;
+        return head;
+    }
 }
 
 
