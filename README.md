@@ -13,7 +13,7 @@ A collection of coding interview practice questions, utilizing algorithms and da
 - [ ] Hash Tables
 - [ ] Trees - In-order, pre-order, post-order
 - [ ] Graphs
-- [ ] Strings and Arrays
+- [x] Strings and Arrays
 - [ ] Greedy Algorithms
 - [ ] Backtracking pb
 - [ ] Design questions 
