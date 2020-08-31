@@ -24,7 +24,7 @@ public class SingleLinkedList {
             current = current.next;
         }
         current.next = new Node(data);
-        return;
+
     }
 
     public void appendFromleft(int data){

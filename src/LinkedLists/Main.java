@@ -1,5 +1,7 @@
 package LinkedLists;
+import StringAndArrays.String_Arrays;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
@@ -9,7 +11,7 @@ public class Main {
         System.out.println("\n This is a collection of coding interview practice questions." +
                 "\n This project includes implementation of algorithms, as well as data structures knowledge. ");
 
-        int exNumber = 0;
+        int exNumber;
         Scanner in = new Scanner(System.in);
         System.out.println("\nEnter the ex. number for activation: ");
         exNumber = in.nextInt();
@@ -74,7 +76,28 @@ public class Main {
                 System.out.print("\nList after recursive reverse: ");
                 node.printList();
 
+                // Strings and arrays manipulation
+            case 8:
+                String string = "cd", string1 = "aab", string3 = "mom";
+                String_Arrays string_arrays = new String_Arrays();
+                string_arrays.reversedString(string);
+                string_arrays.reversedString(string1);
+                string_arrays.reversedString(string3);
+                break;
+            case 9: char[] sentence = new char[] {'p','r','c','t','i','c','e',' ','m','a','k','e','s',' ','p','e','r','f','c','t'};
+            String_Arrays st = new String_Arrays();
+            st.reversingWords(sentence);
+                System.out.println(Arrays.toString(sentence));
+
+
         }
+
+
+
+
+
+
+
 
 
 
