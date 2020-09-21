@@ -1,5 +1,6 @@
 package LinkedLists;
 import StringAndArrays.String_Arrays;
+import Trees_Graphs.BinaryTree;
 
 import java.util.Arrays;
 import java.util.Scanner;
@@ -84,10 +85,19 @@ public class Main {
                 string_arrays.reversedString(string1);
                 string_arrays.reversedString(string3);
                 break;
-            case 9: char[] sentence = new char[] {'p','r','c','t','i','c','e',' ','m','a','k','e','s',' ','p','e','r','f','c','t'};
+            case 9: char[] sentence = new char[] {'p','r','a','c','t','i','c','e',' ','m','a','k','e','s',' ','p','e','r','f','c','t'};
             String_Arrays st = new String_Arrays();
             st.reversingWords(sentence);
-                System.out.println(Arrays.toString(sentence));
+            System.out.println(Arrays.toString(sentence));
+
+            case 10:
+                BinaryTree bst= new BinaryTree(5);
+                bst.addRecursively(bst.getRoot(), -54);
+                bst.addRecursively(bst.getRoot(),8);
+                bst.addRecursively(bst.getRoot(),-9);
+                bst.addRecursively(bst.getRoot(),10);
+                bst.inOrderTraversal(bst.getRoot());
+
 
 
         }
