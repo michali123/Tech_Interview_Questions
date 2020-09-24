@@ -97,20 +97,30 @@ public class Main {
                 bst.addRecursively(bst.getRoot(),-9);
                 bst.addRecursively(bst.getRoot(),10);
                 bst.inOrderTraversal(bst.getRoot());
+                break;
+            case 11: //checking if an element exits in our tree
+                BinaryTree bst2= new BinaryTree(88);
+                bst2.addRecursively(bst2.getRoot(), -54);
+                bst2.addRecursively(bst2.getRoot(),8);
+                bst2.addRecursively(bst2.getRoot(),-9);
+                bst2.addRecursively(bst2.getRoot(),10);
+               bst2.findingElement(10,bst2.getRoot());
+                break;
+            case 12: // Deleting an element from a binary tree
+                BinaryTree binaryTree = new BinaryTree();
+                binaryTree.createTree();
+                System.out.println("Current tree:\n");
+                binaryTree.inOrderTraversal(binaryTree.getRoot());
+                binaryTree.deleteElementIteratively(binaryTree.getRoot(),0);
+               System.out.println("Updated tree after deleting element: " + 0 + " is:\n");
+                binaryTree.inOrderTraversal(binaryTree.getRoot());
+
 
 
 
         }
 
 
-
-
-
-
-
-
-
-
-    }
+   }
 
 }
