@@ -83,48 +83,56 @@ public class BinaryTree{
              }
 
              if (data < current.data) findingElement(data, current.left);
-             else {
-                 findingElement(data, current.right);
-             }
+             else { findingElement(data, current.right); }
     }
-    public void deleteElementIteratively (Node root,int data){
-        if (root == null) { System.out.println("tree is null! "); return; }
-        /*if (root.data == data) {
-            what do we do here?
-        }*/
-        Node current = root;
 
-        while (true){
-            if (current.data > data){ // left subtree
-                if(current.left != null){ //checking if left subtree exists
-                    if (current.left.data == data && current.left.left != null ){
-                        current.left = current.left.left; return;
-                    } else if (current.left.left == null) { current.left = null; return;}
-                }
-            } else{
-                if(current.right != null) {// checking if right subtree exists
-                    if (current.right.data == data && current.right.right != null ){
-                        current.left = current.right.right;
-                        return;
-                    } else if (current.right.right == null) { current.right = null;	return;	}
-                }
-            }  if (current.left == null && current.right == null){
-                break;
+    // 3 cases for deleting an element: 1. no children at all. 2. node has only left/right child 3. node has 2 children
+
+    public Node deleteElement (Node current, int data) {
+        if (current == null) {
+            System.out.println("Element " + data + " does not exits in the tree folks!");
+            return null;
+        } else if (current.data > data) {
+            current.left = deleteElement(current.left, data);
+        } // exploring left sub tree
+        else if (current.data < data) {
+            current.right = deleteElement(current.right, data);
+        } // exploring right sub tree
+        else { // found the node to delete!
+            // case 1 : no children
+            if (current.left == null && current.right == null) {
+                return null;
+            } // case 2: node has only left or right child respectively
+            else if (current.right == null) {
+                return current.left;
+            } else if (current.left == null) {
+                return current.right;
+            }
+            // case 3: node has 2 children, search the node on the right sub-tree with the minimum value
+            else {
+                Integer minVal = minimumValue(current.right);
+                current.data = minVal;
+                current.right = deleteElement(current.right, data);
             }
         }
-        return;
-
+        return current;
     }
+
+        public Integer minimumValue (Node root){
+         if (root.left != null) minimumValue(root.left);
+         return root.data; }
 
     public void createTree (){
 
          this.root = new Node(5);
          this.root.right =new Node(6);
          this.root.right.right =new Node(98);
-       this.root.left =new Node (-9);
-        this.root.left.right = new Node(0);
-       this.root.right.right.left =new Node(7);
-      this.root.left.right.right =new Node(2);
+         this.root.left =new Node (-9);
+         this.root.left.right = new Node(0);
+         this.root.right.right.left =new Node(7);
+         this.root.left.right.right =new Node(2);
+         this.root.left.right.left =new Node(-20);
+
 
     }
 

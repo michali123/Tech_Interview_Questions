@@ -111,8 +111,8 @@ public class Main {
                 binaryTree.createTree();
                 System.out.println("Current tree:\n");
                 binaryTree.inOrderTraversal(binaryTree.getRoot());
-                binaryTree.deleteElementIteratively(binaryTree.getRoot(),0);
-               System.out.println("Updated tree after deleting element: " + 0 + " is:\n");
+                binaryTree.deleteElement(binaryTree.getRoot(),0);
+                System.out.println("Updated tree after deleting element: " + 0 + " is:\n");
                 binaryTree.inOrderTraversal(binaryTree.getRoot());
 
 
