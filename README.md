@@ -11,7 +11,7 @@ A collection of coding interview practice questions, utilizing algorithms and da
 - [ ] Stacks & Queues 
 - [ ] Heaps and Binary Search Algorithms
 - [ ] Hash Tables
-- [ ] Trees - In-order, pre-order, post-order
+- [x] Trees - In-order, pre-order, post-order
 - [ ] Graphs
 - [ ] Greedy Algorithms
 - [ ] Backtracking pb
