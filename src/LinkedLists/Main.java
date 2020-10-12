@@ -3,9 +3,12 @@ import StringAndArrays.String_Arrays;
 import Trees_Graphs.BinaryTree;
 
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Scanner;
 
 public class Main {
+
 
     public static void main(String[] args) {
 
@@ -114,13 +117,81 @@ public class Main {
                 binaryTree.deleteElement(binaryTree.getRoot(),0);
                 System.out.println("Updated tree after deleting element: " + 0 + " is:\n");
                 binaryTree.inOrderTraversal(binaryTree.getRoot());
-
-
-
+                break;
+            case 13: // BFS of a tree
+                BinaryTree tree = new BinaryTree();
+                tree.createTree();
+                tree.levelOrderBFS(tree.getRoot());
+                break;
+            case 14:
+                String  s = "win14   56      ";
+                uniqueChar(s);
+            case 15:
+                String s1 = "mmr6y", s2 = "m6ymr";
+                checkPermutation(s1,s2);
+                checkPermutation2(s1,s2);
 
         }
 
 
+
    }
+    public static boolean uniqueChar (String s){
+        HashSet<Character> hs = new HashSet<>();
+        for (int i =0; i< s.length(); i++){
+            if (hs.contains(s.charAt(i)) && s.charAt(i) != ' ' ){
+                System.out.println("String is not unique");
+                return false; }
+            else{
+                hs.add(s.charAt(i)); }
+        }
+        System.out.println("String is unique");
+        return true;
+    }
+
+    public static boolean checkPermutation(String s1, String s2){
+        HashMap<Character,Integer> string1 = new HashMap<>();
+        HashMap<Character,Integer> string2 = new HashMap<>();
+
+        if (s1.length() != s2.length() ) {
+            System.out.println("false"); return false; }
+            for (int i = 0; i < s1.length(); i++) {
+
+                if (string1.containsKey(s1.charAt(i))) {
+                    int count = string1.get(s1.charAt(i));
+                    string1.put(s1.charAt(i), count + 1);
+                } else {
+                    string1.put(s1.charAt(i), 1); }
+
+                    if (string2.containsKey(s2.charAt(i))) {
+                        int count = string2.get(s2.charAt(i));
+                        string2.put(s2.charAt(i), count + 1);
+                    } else {
+                        string2.put(s2.charAt(i), 1);
+                    }
+                }
+
+        if (string1 != string2) {  System.out.println("s1: " + string1.entrySet() + "\n s2: " + string2);
+            return false;}
+        else{
+            System.out.println("s1: " + string1 + "\n s2: " + string2);
+            return true; }
+    }
+
+    public static boolean checkPermutation2 (String s1, String s2) {
+        int s1Sum = 0, s2Sum = 0;
+        if (s1.length() != s1.length()) return false;
+        for (int i = 0; i < s1.length(); i++) {
+            s1Sum +=  s1.charAt(i);
+            s2Sum +=  s2.charAt(i);
+
+        }
+        if (s1Sum == s2Sum) {
+            System.out.println("true ");
+            return true;
+        }
+        return false;
+    }
+
 
 }

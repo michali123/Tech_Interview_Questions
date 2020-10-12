@@ -3,6 +3,8 @@ package Trees_Graphs;
 import org.jetbrains.annotations.Contract;
 
 import java.security.PublicKey;
+import java.util.LinkedList;
+import java.util.Queue;
 
 public class BinaryTree{
      Node root;
@@ -51,12 +53,12 @@ public class BinaryTree{
          if (root== null) {
               return;}
          inOrderTraversal(root.left);
-        System.out.println(root.data);
+        System.out.print(root.data + " ");
         inOrderTraversal(root.right);
     }
     public void preOrderTraversal(Node root){
         if (root == null) return;
-        System.out.println(root.data);
+        System.out.print(root.data + " ");
         preOrderTraversal(root.left);
         preOrderTraversal(root.right);
 
@@ -66,7 +68,7 @@ public class BinaryTree{
         if (root == null) return;
         postOrderTraversal(root.left);
         postOrderTraversal(root.right);
-        System.out.println(root.data);
+        System.out.print(root.data + " ");
 
     }
 
@@ -122,7 +124,15 @@ public class BinaryTree{
          if (root.left != null) minimumValue(root.left);
          return root.data; }
 
-    public void createTree (){
+    /*
+    *       5
+    *   -9     6
+    *     0     98
+    *  -20     2   7
+    *
+    * */
+
+         public void createTree (){
 
          this.root = new Node(5);
          this.root.right =new Node(6);
@@ -133,6 +143,23 @@ public class BinaryTree{
          this.root.left.right.right =new Node(2);
          this.root.left.right.left =new Node(-20);
 
+
+    }
+    // 1. pushing current node reference 2. pushing its children references to queue if exist 3. pop current node refrence off queue 4.continue looping until queue is empty.
+    public void levelOrderBFS (Node current){
+        if (current == null) { return; }
+
+        Queue<Node> nodes = new LinkedList<>();
+        nodes.add(current);
+
+        while (!nodes.isEmpty()) {
+            if (current.left != null) nodes.add(current.left);
+            if (current.right != null) nodes.add(current.right);
+            System.out.print (current.data + " ");
+            nodes.remove(current);
+            current = nodes.peek();
+
+        }
 
     }
 
